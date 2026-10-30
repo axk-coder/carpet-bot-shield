@@ -1,0 +1,8 @@
+{
+  "carpet-bot-shield.rule.botShieldAxeBreakFast.name": "botShieldAxeBreakFast",
+  "carpet-bot-shield.rule.botShieldAxeBreakFast.desc": "Reduces axe shield break disable time for carpet bots",
+  "carpet-bot-shield.rule.botShieldAxeBreakFast.extra.0": "When enabled carpet bots recover in 1 second instead of 5 seconds",
+  "carpet-bot-shield.rule.botShieldAxeBreakTime.name": "botShieldAxeBreakTime",
+  "carpet-bot-shield.rule.botShieldAxeBreakTime.desc": "Axe shield break duration in seconds for carpet bots",
+  "carpet-bot-shield.rule.botShieldAxeBreakTime.extra.0": "Defaults to 1 second"
+}

@@ -2,6 +2,7 @@ package com.axk.carpetbotshield;
 
 import carpet.CarpetExtension;
 import carpet.api.settings.SettingsManager;
+import carpet.utils.Translations;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
@@ -21,6 +22,8 @@ public class CarpetBotShieldExtension implements CarpetExtension {
 
 	@Override
 	public void onGameStarted() {
+		registerTranslations();
+		Translations.updateLanguage();
 		this.settingsManager.parseSettingsClass(CarpetBotShieldSettings.class);
 	}
 
@@ -39,13 +42,22 @@ public class CarpetBotShieldExtension implements CarpetExtension {
 		return "1.0.0";
 	}
 
+	public static void registerTranslations() {
+		Translations.registerFallbackTranslation("carpet-bot-shield.rule.botShieldAxeBreakFast.name", "botShieldAxeBreakFast");
+		Translations.registerFallbackTranslation("carpet-bot-shield.rule.botShieldAxeBreakFast.desc", "Reduces axe shield break disable time for carpet bots");
+		Translations.registerFallbackTranslation("carpet-bot-shield.rule.botShieldAxeBreakTime.name", "botShieldAxeBreakTime");
+		Translations.registerFallbackTranslation("carpet-bot-shield.rule.botShieldAxeBreakTime.desc", "Axe shield break duration in seconds for carpet bots");
+	}
+
 	@Override
 	public Map<String, String> canHasTranslations(String lang) {
 		Map<String, String> map = new HashMap<>();
-		map.put("carpet.rule.botShieldAxeBreakFast.desc", "Reduces axe shield break disable time for carpet bots");
-		map.put("carpet.rule.botShieldAxeBreakFast.extra.0", "When enabled carpet bots recover in 1 second instead of 5 seconds");
-		map.put("carpet.rule.botShieldAxeBreakTime.desc", "Axe shield break duration in seconds for carpet bots");
-		map.put("carpet.rule.botShieldAxeBreakTime.extra.0", "Defaults to 1 second");
+		map.put("carpet-bot-shield.rule.botShieldAxeBreakFast.name", "botShieldAxeBreakFast");
+		map.put("carpet-bot-shield.rule.botShieldAxeBreakFast.desc", "Reduces axe shield break disable time for carpet bots");
+		map.put("carpet-bot-shield.rule.botShieldAxeBreakFast.extra.0", "When enabled carpet bots recover in 1 second instead of 5 seconds");
+		map.put("carpet-bot-shield.rule.botShieldAxeBreakTime.name", "botShieldAxeBreakTime");
+		map.put("carpet-bot-shield.rule.botShieldAxeBreakTime.desc", "Axe shield break duration in seconds for carpet bots");
+		map.put("carpet-bot-shield.rule.botShieldAxeBreakTime.extra.0", "Defaults to 1 second");
 		return map;
 	}
 
