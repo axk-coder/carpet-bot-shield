@@ -1,0 +1,6 @@
+build/
+.gradle/
+.agents/
+map.txt
+task.md
+libs/

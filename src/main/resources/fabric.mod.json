@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "carpet-bot-shield",
+  "version": "${version}",
+  "name": "Carpet Bot Shield",
+  "description": "Carpet extension that makes shields wielded by carpet bots only have a 1 second axe break time.",
+  "authors": [
+    "Axk"
+  ],
+  "contact": {
+    "repo": "https://github.com/axk-coder/carpet-bot-shield"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.axk.carpetbotshield.CarpetBotShieldMod"
+    ]
+  },
+  "mixins": [
+    "carpet-bot-shield.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=26.3",
+    "carpet": "*"
+  }
+}
